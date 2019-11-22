@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 该文件中产生的所有对象，被Spring放入了一个称之为 Spring IOC容器的地方-->
+    <!-- id：唯一标识 class：指定类型-->
+
+    <bean id="world" class="cn.edu.nefu.zjh.controller.HelloWorld">
+        <property name="name" value="spring"></property>
+    </bean>
+    <bean id="student" class="cn.edu.nefu.zjh.entity.Student">
+        <!-- property:该class代表的属性-->
+        <property name="stuAge" value="25"></property>
+        <property name="stuName" value="zjh"></property>
+        <property name="stuNo" value="20124532"></property>
+    </bean>
+</beans>
