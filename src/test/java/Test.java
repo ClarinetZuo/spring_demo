@@ -1,3 +1,4 @@
+import cn.edu.nefu.zjh.entity.Course;
 import cn.edu.nefu.zjh.entity.Student;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -10,7 +11,7 @@ public class Test {
 
     public static void main(String[] args) {
 
-        learnWithIOC();
+        testDI();
     }
 
     public static void testIOC() {
@@ -37,5 +38,11 @@ public class Test {
         Student student = (Student) ac.getBean("student");
 
         student.learn("javaCourse");
+    }
+
+    public static void testDI(){
+        ApplicationContext ac = new ClassPathXmlApplicationContext("META-INF/applicationContext.xml");
+        Course course = (Course)ac.getBean("course");
+        course.showInfo();
     }
 }

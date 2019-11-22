@@ -16,4 +16,18 @@
     </bean>
     <bean id="javaCourse" class="cn.edu.nefu.zjh.course.JavaCourse"></bean>
     <bean id="htmlCourse" class="cn.edu.nefu.zjh.course.HtmlCourse"></bean>
+    <bean id="teacher" class="cn.edu.nefu.zjh.entity.Teacher">
+<!--        <property name="age" value="18"></property>-->
+<!--        <property name="name" value="zmx"></property>-->
+        <constructor-arg value="aaa"></constructor-arg>
+        <constructor-arg value="14"></constructor-arg>
+    </bean>
+    <bean id="course" class="cn.edu.nefu.zjh.entity.Course">
+<!--        <property name="courseHour" value="10"></property>-->
+<!--        <property name="courseName" value="BigData"></property>-->
+<!--        <property name="teacher" ref="teacher"></property>-->
+        <constructor-arg value="Kafka"></constructor-arg>
+        <constructor-arg value="10"></constructor-arg>
+        <constructor-arg ref="teacher"></constructor-arg>
+    </bean>
 </beans>
