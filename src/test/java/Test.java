@@ -17,7 +17,6 @@ public class Test {
         // Spring 上下文对象
         ApplicationContext ac = new ClassPathXmlApplicationContext("META-INF/applicationContext.xml");
         // 从IOC容器中获取这个对象
-        // 从IOC容器中获取这个对象
         Student student = (Student) ac.getBean("student");
         System.out.println(student);
 
