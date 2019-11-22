@@ -17,10 +17,12 @@
     <bean id="javaCourse" class="cn.edu.nefu.zjh.course.JavaCourse"></bean>
     <bean id="htmlCourse" class="cn.edu.nefu.zjh.course.HtmlCourse"></bean>
     <bean id="teacher" class="cn.edu.nefu.zjh.entity.Teacher">
+        <!-- setter注入 -->
 <!--        <property name="age" value="18"></property>-->
 <!--        <property name="name" value="zmx"></property>-->
-        <constructor-arg value="aaa"></constructor-arg>
-        <constructor-arg value="14"></constructor-arg>
+        <!-- 构造器注入 -->
+        <constructor-arg value="aaa" name="name"></constructor-arg>
+        <constructor-arg value="14" name="age"></constructor-arg>
     </bean>
     <bean id="course" class="cn.edu.nefu.zjh.entity.Course">
 <!--        <property name="courseHour" value="10"></property>-->

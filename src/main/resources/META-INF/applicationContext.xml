@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!-- 该文件中产生的所有对象，被Spring放入了一个称之为 Spring IOC容器的地方-->
     <!-- id：唯一标识 class：指定类型-->
@@ -16,11 +17,13 @@
     </bean>
     <bean id="javaCourse" class="cn.edu.nefu.zjh.course.JavaCourse"></bean>
     <bean id="htmlCourse" class="cn.edu.nefu.zjh.course.HtmlCourse"></bean>
-    <bean id="teacher" class="cn.edu.nefu.zjh.entity.Teacher">
+    <bean id="teacher" class="cn.edu.nefu.zjh.entity.Teacher" p:age="25" p:name="zjk">
+        <!-- setter注入 -->
 <!--        <property name="age" value="18"></property>-->
 <!--        <property name="name" value="zmx"></property>-->
-        <constructor-arg value="aaa"></constructor-arg>
-        <constructor-arg value="14"></constructor-arg>
+        <!-- 构造器注入 -->
+<!--        <constructor-arg value="aaa" name="name"></constructor-arg>-->
+<!--        <constructor-arg value="14" name="age"></constructor-arg>-->
     </bean>
     <bean id="course" class="cn.edu.nefu.zjh.entity.Course">
 <!--        <property name="courseHour" value="10"></property>-->
