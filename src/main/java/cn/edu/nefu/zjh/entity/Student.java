@@ -1,5 +1,12 @@
 package cn.edu.nefu.zjh.entity;
 
+import cn.edu.nefu.zjh.course.HtmlCourse;
+import cn.edu.nefu.zjh.course.ICourse;
+import cn.edu.nefu.zjh.course.JavaCourse;
+import cn.edu.nefu.zjh.factory.CouresFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 /**
  * author:Zuo Junhao
  * NEFU
@@ -44,5 +51,21 @@ public class Student {
 
     public void setStuAge(int stuAge) {
         this.stuAge = stuAge;
+    }
+
+    public void learnJava(){
+        ICourse course = new JavaCourse();
+        course.learn();
+    }
+    public void learnHtml(){
+        ICourse course = new HtmlCourse();
+        course.learn();
+    }
+
+    public void learn(String courseName){
+//        CouresFactory.getCourse(courseName).learn();
+        ApplicationContext ac = new ClassPathXmlApplicationContext("META-INF/applicationContext.xml");
+        ICourse course = (ICourse)ac.getBean(courseName);
+        course.learn();
     }
 }

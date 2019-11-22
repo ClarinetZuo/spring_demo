@@ -14,4 +14,6 @@
         <property name="stuName" value="zjh"></property>
         <property name="stuNo" value="20124532"></property>
     </bean>
+    <bean id="javaCourse" class="cn.edu.nefu.zjh.course.JavaCourse"></bean>
+    <bean id="htmlCourse" class="cn.edu.nefu.zjh.course.HtmlCourse"></bean>
 </beans>

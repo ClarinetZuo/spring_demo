@@ -9,7 +9,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Test {
 
     public static void main(String[] args) {
-//        Student student = new Student();
+
+        learnWithIOC();
+    }
+
+    public static void testIOC() {
+        //        Student student = new Student();
 //        student.setStuName("zjh");
 //        student.setStuAge(25);
 //        student.setStuNo(20124532);
@@ -19,6 +24,18 @@ public class Test {
         // 从IOC容器中获取这个对象
         Student student = (Student) ac.getBean("student");
         System.out.println(student);
+    }
 
+    public static void testCourseFactory() {
+        Student student = new Student();
+        // 通过简单工厂，集中管理course
+        student.learn("java");
+    }
+
+    public static void learnWithIOC(){
+        ApplicationContext ac = new ClassPathXmlApplicationContext("META-INF/applicationContext.xml");
+        Student student = (Student) ac.getBean("student");
+
+        student.learn("javaCourse");
     }
 }
