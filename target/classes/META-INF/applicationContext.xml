@@ -27,9 +27,9 @@
 <!--        <constructor-arg value="33" name="age"></constructor-arg>-->
         <constructor-arg value="zjh" name="name"></constructor-arg>
     </bean>
-    <bean id="course" class="cn.edu.nefu.zjh.entity.Course" p:courseHour="300" p:courseName="Kafka" p:teacher-ref="teacher">
-<!--        <property name="courseHour" value="10"></property>-->
-<!--        <property name="courseName" value="BigData"></property>-->
+    <bean id="course" class="cn.edu.nefu.zjh.entity.Course" autowire="byType">
+        <property name="courseHour" value="10"></property>
+        <property name="courseName" value="BigData"></property>
 <!--        <property name="teacher" ref="teacher"></property>-->
 <!--        <constructor-arg value="Kafka"></constructor-arg>-->
 <!--        <constructor-arg value="10"></constructor-arg>-->

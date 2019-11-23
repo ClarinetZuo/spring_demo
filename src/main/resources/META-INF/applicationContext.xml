@@ -2,7 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byName"
+>
     <!-- 该文件中产生的所有对象，被Spring放入了一个称之为 Spring IOC容器的地方-->
     <!-- id：唯一标识 class：指定类型-->
 
@@ -27,9 +30,9 @@
 <!--        <constructor-arg value="33" name="age"></constructor-arg>-->
         <constructor-arg value="zjh" name="name"></constructor-arg>
     </bean>
-    <bean id="course" class="cn.edu.nefu.zjh.entity.Course" p:courseHour="300" p:courseName="Kafka" p:teacher-ref="teacher">
-<!--        <property name="courseHour" value="10"></property>-->
-<!--        <property name="courseName" value="BigData"></property>-->
+    <bean id="course" class="cn.edu.nefu.zjh.entity.Course" autowire="byType">
+        <property name="courseHour" value="10"></property>
+        <property name="courseName" value="BigData"></property>
 <!--        <property name="teacher" ref="teacher"></property>-->
 <!--        <constructor-arg value="Kafka"></constructor-arg>-->
 <!--        <constructor-arg value="10"></constructor-arg>-->
@@ -81,4 +84,6 @@
             </props>
         </property>
     </bean>
+    <!-- 配置扫描器-->
+    <context:component-scan base-package="cn.edu.nefu.zjh.dao"></context:component-scan>
 </beans>

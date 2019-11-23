@@ -12,7 +12,7 @@ public class Test {
 
     public static void main(String[] args) {
 
-        testCollection();
+        testDI();
     }
 
     public static void testIOC() {
