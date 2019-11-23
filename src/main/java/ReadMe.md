@@ -27,7 +27,14 @@
 <context:component-scan base-package="cn.edu.nefu.zjh.dao"></context:component-scan>
 ```
 ### Spring在启动时，会扫描base-package包中的所有类，查找这些类是否有注解@Component("studentDao")，如果有，则将该类加入IOC容器
-#### Component细化
+#### @Component细化
 - @Repository:Dao
-- @Service
-- @Controller
+- @Service:service层
+- @Controller:Servlet
+### 使用注解实现事务(声明式事务)
+```xml
+public void addStudent(){
+    // 增加班级
+    // ...
+}
+```
