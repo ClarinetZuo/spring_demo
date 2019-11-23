@@ -17,20 +17,68 @@
     </bean>
     <bean id="javaCourse" class="cn.edu.nefu.zjh.course.JavaCourse"></bean>
     <bean id="htmlCourse" class="cn.edu.nefu.zjh.course.HtmlCourse"></bean>
-    <bean id="teacher" class="cn.edu.nefu.zjh.entity.Teacher" p:age="25" p:name="zjk">
+    <bean id="teacher" class="cn.edu.nefu.zjh.entity.Teacher">
         <!-- setter注入 -->
 <!--        <property name="age" value="18"></property>-->
 <!--        <property name="name" value="zmx"></property>-->
         <!-- 构造器注入 -->
 <!--        <constructor-arg value="aaa" name="name"></constructor-arg>-->
 <!--        <constructor-arg value="14" name="age"></constructor-arg>-->
+<!--        <constructor-arg value="33" name="age"></constructor-arg>-->
+        <constructor-arg value="zjh" name="name"></constructor-arg>
     </bean>
-    <bean id="course" class="cn.edu.nefu.zjh.entity.Course">
+    <bean id="course" class="cn.edu.nefu.zjh.entity.Course" p:courseHour="300" p:courseName="Kafka" p:teacher-ref="teacher">
 <!--        <property name="courseHour" value="10"></property>-->
 <!--        <property name="courseName" value="BigData"></property>-->
 <!--        <property name="teacher" ref="teacher"></property>-->
-        <constructor-arg value="Kafka"></constructor-arg>
-        <constructor-arg value="10"></constructor-arg>
-        <constructor-arg ref="teacher"></constructor-arg>
+<!--        <constructor-arg value="Kafka"></constructor-arg>-->
+<!--        <constructor-arg value="10"></constructor-arg>-->
+<!--        <constructor-arg ref="teacher"></constructor-arg>-->
+    </bean>
+    <bean id="collectionDemo" class="cn.edu.nefu.zjh.entity.AllCollectionType">
+        <property name="list">
+            <list>
+            <value>soccer</value>
+            <value>pingpang</value>
+            <value>basketball</value>
+            </list>
+        </property>
+        <property name="array">
+            <array>
+                <value>a</value>
+                <value>b</value>
+                <value>c</value>
+            </array>
+        </property>
+        <property name="set">
+            <set>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry>
+                    <key>
+                        <value>1</value>
+                    </key>
+                    <value>a</value>
+                </entry>
+                <entry>
+                    <key>
+                        <value>2</value>
+                    </key>
+                    <value>b</value>
+                </entry>
+            </map>
+        </property>
+        <property name="props">
+            <props>
+                <prop key="abc">123</prop>
+                <prop key="ab">12</prop>
+                <prop key="ccc">1234</prop>
+            </props>
+        </property>
     </bean>
 </beans>

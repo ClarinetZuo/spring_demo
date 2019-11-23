@@ -11,8 +11,15 @@ public class Teacher {
 
     }
 
-    public Teacher(String name, int age) {
+//    public Teacher(String name, int age) {
+//        this.name = name;
+//        this.age = age;
+//    }
+    public Teacher(String name){
         this.name = name;
+    }
+
+    public Teacher(int age){
         this.age = age;
     }
 

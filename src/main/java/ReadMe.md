@@ -13,3 +13,6 @@
 <constructor-arg ref="teacher"></constructor-arg>
 ```
 - p命名空间
+```xml
+<bean id="course" class="cn.edu.nefu.zjh.entity.Course" p:courseHour="300" p:courseName="Kafka" p:teacher-ref="teacher">
+```

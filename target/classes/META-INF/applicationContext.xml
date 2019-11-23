@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!-- 该文件中产生的所有对象，被Spring放入了一个称之为 Spring IOC容器的地方-->
     <!-- id：唯一标识 class：指定类型-->
@@ -21,15 +22,63 @@
 <!--        <property name="age" value="18"></property>-->
 <!--        <property name="name" value="zmx"></property>-->
         <!-- 构造器注入 -->
-        <constructor-arg value="aaa" name="name"></constructor-arg>
-        <constructor-arg value="14" name="age"></constructor-arg>
+<!--        <constructor-arg value="aaa" name="name"></constructor-arg>-->
+<!--        <constructor-arg value="14" name="age"></constructor-arg>-->
+<!--        <constructor-arg value="33" name="age"></constructor-arg>-->
+        <constructor-arg value="zjh" name="name"></constructor-arg>
     </bean>
-    <bean id="course" class="cn.edu.nefu.zjh.entity.Course">
+    <bean id="course" class="cn.edu.nefu.zjh.entity.Course" p:courseHour="300" p:courseName="Kafka" p:teacher-ref="teacher">
 <!--        <property name="courseHour" value="10"></property>-->
 <!--        <property name="courseName" value="BigData"></property>-->
 <!--        <property name="teacher" ref="teacher"></property>-->
-        <constructor-arg value="Kafka"></constructor-arg>
-        <constructor-arg value="10"></constructor-arg>
-        <constructor-arg ref="teacher"></constructor-arg>
+<!--        <constructor-arg value="Kafka"></constructor-arg>-->
+<!--        <constructor-arg value="10"></constructor-arg>-->
+<!--        <constructor-arg ref="teacher"></constructor-arg>-->
+    </bean>
+    <bean id="collectionDemo" class="cn.edu.nefu.zjh.entity.AllCollectionType">
+        <property name="list">
+            <list>
+            <value>soccer</value>
+            <value>pingpang</value>
+            <value>basketball</value>
+            </list>
+        </property>
+        <property name="array">
+            <array>
+                <value>a</value>
+                <value>b</value>
+                <value>c</value>
+            </array>
+        </property>
+        <property name="set">
+            <set>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry>
+                    <key>
+                        <value>1</value>
+                    </key>
+                    <value>a</value>
+                </entry>
+                <entry>
+                    <key>
+                        <value>2</value>
+                    </key>
+                    <value>b</value>
+                </entry>
+            </map>
+        </property>
+        <property name="props">
+            <props>
+                <prop key="abc">123</prop>
+                <prop key="ab">12</prop>
+                <prop key="ccc">1234</prop>
+            </props>
+        </property>
     </bean>
 </beans>

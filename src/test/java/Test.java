@@ -1,3 +1,4 @@
+import cn.edu.nefu.zjh.entity.AllCollectionType;
 import cn.edu.nefu.zjh.entity.Course;
 import cn.edu.nefu.zjh.entity.Student;
 import org.springframework.context.ApplicationContext;
@@ -11,7 +12,7 @@ public class Test {
 
     public static void main(String[] args) {
 
-        testDI();
+        testCollection();
     }
 
     public static void testIOC() {
@@ -44,5 +45,12 @@ public class Test {
         ApplicationContext ac = new ClassPathXmlApplicationContext("META-INF/applicationContext.xml");
         Course course = (Course)ac.getBean("course");
         course.showInfo();
+    }
+
+    public static void testCollection(){
+        ApplicationContext ac = new ClassPathXmlApplicationContext("META-INF/applicationContext.xml");
+
+        AllCollectionType allCollectionType = (AllCollectionType) ac.getBean("collectionDemo");
+        System.out.println(allCollectionType);
     }
 }
